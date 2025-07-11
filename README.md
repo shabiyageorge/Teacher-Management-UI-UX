@@ -24,8 +24,8 @@ Although the current version is static (HTML + TailwindCSS), it is structured to
 |-------------|--------------------------------------------------|
 | HTML        | Static structure for layout                      |
 | Tailwind CSS| Utility-first CSS framework for styling          |
-| Next.js     | *(Recommended)* React-based framework for routing, pages, and performance |
-| TypeScript  | *(Recommended)* Adds static typing to JavaScript for safer, scalable development |
+| Next.js     | React-based framework for routing, pages, and performance |
+| TypeScript  |  Adds static typing to JavaScript for safer, scalable development |
 
 ---
 
