@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teacher Management Interface</title>
+    <!-- TailwindCSS via CDN for rapid prototyping -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Thin, subtle custom scrollbar – optional */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0.3);
+        border-radius: 3px;
+      }
+    </style>
+  </head>
+  <body class="h-screen flex flex-col bg-gray-100 font-sans text-sm">
+    <!-- Top Bar -------------------------------------------------------->
+    <header class="h-10 w-full bg-red-600 flex items-center px-4 text-white">
+      <h1 class="font-semibold tracking-wide text-xs sm:text-sm">
+        Teacher Management
+      </h1>
+      <div class="ml-auto flex items-center gap-4 text-xs">
+        <span>Richmond Hill</span>
+        <button
+          class="w-5 h-5 flex items-center justify-center rounded-full bg-white/20 hover:bg-white/30 focus:outline-none"
+          title="Profile"
+        >
+          <!-- Heroicons user-solid -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+            class="w-3.5 h-3.5"
+          >
+            <path
+              d="M12 2a5 5 0 0 0-5 5 5 5 0 0 0 10 0 5 5 0 0 0-5-5zm0 12c-4.418 0-8 1.79-8 4v2h16v-2c0-2.21-3.582-4-8-4z"
+            />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <div class="flex flex-1 overflow-hidden">
+      <!-- Sidebar ----------------------------------------------------->
+      <aside
+        class="hidden sm:block w-56 xl:w-64 bg-slate-900 text-gray-200 overflow-y-auto"
+      >
+        <div class="p-4 text-lg font-semibold text-white">Logo</div>
+        <nav class="px-2 flex flex-col space-y-1 text-sm">
+          <!-- Active page is Teachers for this mockup -->
+          <a
+            href="#"
+            class="py-2 px-3 rounded hover:bg-slate-800 transition-colors"
+            >Dashboard</a
+          >
+          <a
+            href="#"
+            class="py-2 px-3 rounded bg-slate-800 text-white font-semibold"
+            >Teachers</a
+          >
+          <a href="#" class="py-2 px-3 rounded hover:bg-slate-800"
+            >Students</a
+          >
+          <a href="#" class="py-2 px-3 rounded hover:bg-slate-800">Programs</a>
+          <a href="#" class="py-2 px-3 rounded hover:bg-slate-800">Reports</a>
+          <a href="#" class="py-2 px-3 rounded hover:bg-slate-800">Timeline</a>
+        </nav>
+      </aside>
+
+      <!-- Main Content ------------------------------------------------->
+      <main class="flex-1 overflow-y-auto p-4 space-y-4">
+        <!-- Breadcrumb / Page title -->
+        <h2 class="text-lg font-semibold text-gray-700 mb-2">
+          Teachers / Alynia Allan
+        </h2>
+
+        <!-- Top Info Grid --------------------------------------------->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+          <!-- Details Card -->
+          <section class="bg-white shadow-sm rounded p-4 space-y-2">
+            <div class="flex justify-between items-center">
+              <h3 class="font-medium text-gray-600">Details</h3>
+              <button
+                class="text-gray-400 hover:text-gray-600 focus:outline-none"
+                title="Edit"
+              >
+                <!-- Heroicons pencil-square-solid -->
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  class="w-4 h-4"
+                >
+                  <path
+                    d="M17.414 2.586a2 2 0 0 0-2.828 0L6 11.172V14h2.828l8.586-8.586a2 2 0 0 0 0-2.828z"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    d="M4 16a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.586l2 2H4v8h8v-3.586l2-2V14a2 2 0 0 1-2 2H4z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </button>
+            </div>
+            <dl class="grid grid-cols-2 gap-y-1 text-sm">
+              <dt class="text-gray-500">Name</dt>
+              <dd>Alynia Allan</dd>
+              <dt class="text-gray-500">Role</dt>
+              <dd>Teacher</dd>
+              <dt class="text-gray-500">Birth Date</dt>
+              <dd>—</dd>
+            </dl>
+          </section>
+
+          <!-- Email Card -->
+          <section class="bg-white shadow-sm rounded p-4 space-y-2">
+            <div class="flex justify-between items-center">
+              <h3 class="font-medium text-gray-600">Email</h3>
+              <button
+                class="text-gray-400 hover:text-gray-600 focus:outline-none"
+                title="Add"
+              >
+                <!-- heroicons plus-solid -->
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  class="w-4 h-4"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 5a1 1 0 0 1 1 1v3h3a1 1 0 1 1 0 2h-3v3a1 1 0 1 1-2 0v-3H6a1 1 0 1 1 0-2h3V6a1 1 0 0 1 1-1z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </button>
+            </div>
+            <p class="text-sm">Work — alyniaallan@example.com</p>
+          </section>
+
+          <!-- Phone Card -->
+          <section class="bg-white shadow-sm rounded p-4 space-y-2">
+            <div class="flex justify-between items-center">
+              <h3 class="font-medium text-gray-600">Phone</h3>
+              <button class="text-gray-400 hover:text-gray-600" title="Add">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  class="w-4 h-4"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 5a1 1 0 0 1 1 1v3h3a1 1 0 1 1 0 2h-3v3a1 1 0 1 1-2 0v-3H6a1 1 0 1 1 0-2h3V6a1 1 0 0 1 1-1z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </button>
+            </div>
+            <p class="text-sm">Home — (416) 648‑9057</p>
+          </section>
+
+          <!-- Addresses Card -->
+          <section class="bg-white shadow-sm rounded p-4 space-y-2">
+            <div class="flex justify-between items-center">
+              <h3 class="font-medium text-gray-600">Addresses</h3>
+              <button class="text-gray-400 hover:text-gray-600" title="Add">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  class="w-4 h-4"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 5a1 1 0 0 1 1 1v3h3a1 1 0 1 1 0 2h-3v3a1 1 0 1 1-2 0v-3H6a1 1 0 1 1 0-2h3V6a1 1 0 0 1 1-1z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </button>
+            </div>
+            <address class="not-italic text-sm leading-snug">
+              36 Old Orchard Pt. Suite Cl<br />North York, Ontario<br />Canada
+            </address>
+          </section>
+        </div>
+
+        <!-- Qualifications Grid --------------------------------------- -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+          <!-- Private Qualifications -->
+          <section class="bg-white shadow-sm rounded p-4">
+            <div class="flex justify-between items-center mb-2">
+              <h3 class="font-medium text-gray-600">Private Qualifications</h3>
+              <button
+                class="text-gray-400 hover:text-gray-600 focus:outline-none"
+                title="Add"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  class="w-4 h-4"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 5a1 1 0 0 1 1 1v3h3a1 1 0 1 1 0 2h-3v3a1 1 0 1 1-2 0v-3H6a1 1 0 1 1 0-2h3V6a1 1 0 0 1 1-1z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            <div class="overflow-x-auto">
+              <table class="min-w-full text-left text-xs">
+                <thead>
+                  <tr class="text-gray-500 border-b">
+                    <th class="py-2 pr-4 font-medium">Name</th>
+                    <th class="py-2 font-medium">Rate ($/hr)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border-b last:border-0">
+                    <td class="py-1 pr-4">Vocal Contemporary</td>
+                    <td class="py-1">$28.00</td>
+                  </tr>
+                  <tr class="border-b last:border-0">
+                    <td class="py-1 pr-4">Vocal Classical</td>
+                    <td class="py-1">$28.00</td>
+                  </tr>
+                  <tr class="border-b last:border-0">
+                    <td class="py-1 pr-4">Vocal Fry</td>
+                    <td class="py-1">$28.00</td>
+                  </tr>
+                  <tr class="border-b last:border-0">
+                    <td class="py-1 pr-4">Vocal Hybrid</td>
+                    <td class="py-1">$28.00</td>
+                  </tr>
+                  <tr>
+                    <td class="py-1 pr-4">Instrument</td>
+                    <td class="py-1">$28.00</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- Group Qualifications -->
+          <section class="bg-white shadow-sm rounded p-4">
+            <div class="flex justify-between items-center mb-2">
+              <h3 class="font-medium text-gray-600">Group Qualifications</h3>
+              <button
+                class="text-gray-400 hover:text-gray-600 focus:outline-none"
+                title="Add"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  class="w-4 h-4"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 5a1 1 0 0 1 1 1v3h3a1 1 0 1 1 0 2h-3v3a1 1 0 1 1-2 0v-3H6a1 1 0 1 1 0-2h3V6a1 1 0 0 1 1-1z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="min-w-full text-left text-xs">
+                <thead>
+                  <tr class="text-gray-500 border-b">
+                    <th class="py-2 pr-4 font-medium">Name</th>
+                    <th class="py-2 font-medium">Rate ($/hr)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="py-2 pr-4 text-gray-500">—</td>
+                    <td class="py-2 text-gray-500">—</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+
+        <!-- Schedule / Availability ---------------------------------- -->
+        <section class="bg-white shadow-sm rounded">
+          <!-- Tabs -->
+          <div class="border-b flex text-xs overflow-x-auto">
+            <button
+              class="px-4 py-2 border-b-2 border-blue-600 text-blue-600 whitespace-nowrap"
+            >
+              Availability
+            </button>
+            <button class="px-4 py-2 whitespace-nowrap">Unavailabilities</button>
+            <button class="px-4 py-2 whitespace-nowrap">Students</button>
+            <button class="px-4 py-2 whitespace-nowrap">Schedule</button>
+            <button class="px-4 py-2 whitespace-nowrap">Invoiced Lessons</button>
+            <button class="px-4 py-2 whitespace-nowrap">Unscheduled Lessons</button>
+            <button class="px-4 py-2 whitespace-nowrap">Time Voucher</button>
+            <button class="px-4 py-2 whitespace-nowrap">Comments</button>
+            <button class="px-4 py-2 whitespace-nowrap">History</button>
+          </div>
+
+          <!-- Timetable (simple static mock) -->
+          <div class="overflow-auto h-[400px]">
+            <table class="min-w-full text-center text-xs">
+              <thead class="sticky top-0 bg-gray-100">
+                <tr>
+                  <th class="w-20"></th>
+                  <th class="py-2">Monday</th>
+                  <th class="py-2">Tuesday</th>
+                  <th class="py-2">Wednesday</th>
+                  <th class="py-2">Thursday</th>
+                  <th class="py-2">Friday</th>
+                  <th class="py-2">Saturday</th>
+                  <th class="py-2">Sunday</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Generate 13 half‑hour rows (7:30–1:00) just as placeholder -->
+                <!-- Row template: time + 7 cells -->
+                <!-- A few green cells suggest booked/available slots -->
+                <script>
+                  const times = [
+                    "7:30am",
+                    "8:00am",
+                    "8:30am",
+                    "9:00am",
+                    "9:30am",
+                    "10:00am",
+                    "10:30am",
+                    "11:00am",
+                    "11:30am",
+                    "12:00pm",
+                    "12:30pm",
+                    "1:00pm",
+                    "1:30pm",
+                    "2:00pm",
+                    "2:30pm",
+                    "3:00pm",
+                    "3:30pm",
+                    "4:00pm",
+                    "4:30pm",
+                    "5:00pm",
+                  ];
+                  const tbody = document.currentScript.parentElement;
+                  times.forEach((t, i) => {
+                    const tr = document.createElement("tr");
+                    // time label
+                    const th = document.createElement("th");
+                    th.textContent = t;
+                    th.className = "sticky left-0 bg-gray-50 text-gray-500 font-normal px-2 whitespace-nowrap";
+                    tr.appendChild(th);
+                    // 7 cells
+                    for (let d = 0; d < 7; d++) {
+                      const td = document.createElement("td");
+                      td.className = "h-10 bg-gray-200";
+                      // simple demo: make Tuesday 4pm‑5pm & Friday 3:30‑4pm green
+                      if (
+                        (d === 1 && i === 17) ||
+                        (d === 4 && (i === 16 || i === 17)) ||
+                        (d === 5 && i >= 0)
+                      ) {
+                        td.classList.replace("bg-gray-200", "bg-green-300");
+                      }
+                      tr.appendChild(td);
+                    }
+                    tbody.appendChild(tr);
+                  });
+                </script>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
